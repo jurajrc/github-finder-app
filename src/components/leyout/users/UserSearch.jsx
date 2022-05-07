@@ -75,7 +75,7 @@ const StyleSearch = styled.div`
             button {
                 position: absolute;
                 top: 0;
-                right: 0;
+                right: -1px;
                 bottom: 0;
                 width: 6em;
                 border: none;
