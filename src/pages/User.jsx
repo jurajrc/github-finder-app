@@ -5,18 +5,28 @@ import GithubContext from '../context/github/GithubContext'
 import Spinner from '../components/leyout/Spinner'
 import styled from 'styled-components'
 import ReposList from '../components/repos/ReposList'
+import { getUser, getUserRepos } from '../context/github/GithubAction'
 
 const User = () => {
-  const { getUser, user, loading, getUserRepos, repos } = useContext(GithubContext)
+  const { user, loading, repos, dispatch } = useContext(GithubContext)
 
   // posledná hodnota z url pathu
   const params = useParams()
 
   useEffect(() => {
-    getUser(params.login)
-    getUserRepos(params.login)
+    const getUserData = async () => {
+      dispatch({type: 'SET_LOADING'})
+      const userData = await getUser(params.login)
+      dispatch({type: 'GET_USER', payload: userData})
+
+      const reposData = await getUserRepos(params.login)
+      dispatch({type: 'GET_REPOS', payload: reposData})
+
+    }
+    getUserData()
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [dispatch, params.login])
 
   // destructuring
   const {
@@ -82,12 +92,14 @@ const User = () => {
 
               <div className="more-info">
 
-                  <div className="location column">
-                    <span>Location</span>
-                    <div className="bottom">
-                      <p>{location}</p>
+                  {location &&  (
+                    <div className="location column">
+                      <span>Location</span>
+                      <div className="bottom">
+                        <p>{location}</p>
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {blog && (
                     <div className="website column">
