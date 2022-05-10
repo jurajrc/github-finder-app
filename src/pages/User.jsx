@@ -6,6 +6,7 @@ import Spinner from '../components/leyout/Spinner'
 import styled from 'styled-components'
 import ReposList from '../components/repos/ReposList'
 import { getUser, getUserAndRepos } from '../context/github/GithubAction'
+import ScrollTop from '../components/ScrollTop'
 
 const User = () => {
   const { user, loading, repos, dispatch } = useContext(GithubContext)
@@ -167,6 +168,9 @@ const User = () => {
         </div>
 
         <ReposList repos={repos} />
+
+        <ScrollTop />
+
       </StyleUser>
     </>
   )
