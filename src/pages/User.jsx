@@ -195,7 +195,8 @@ width: 69em;
       height: 15em;
       @media (max-width: 500px) {
         max-width: 15em;
-    }
+        margin: 0 auto;
+      }
       
 
       img {
@@ -215,6 +216,9 @@ width: 69em;
     }
     .header-right {
       margin: .5em 0em .5em 1em;
+      @media (max-width: 500px) {
+        margin: .5em 0;
+      }
 
       .name {
         display: flex;
