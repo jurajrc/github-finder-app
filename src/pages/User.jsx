@@ -172,6 +172,7 @@ const User = () => {
   )
 }
 const StyleUser = styled.div`
+width: 69em;
   .back-link {
     margin: 2em;
     display: block;
@@ -185,11 +186,16 @@ const StyleUser = styled.div`
   }
   .header-context {
     display: flex;
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
     .image {
       position: relative;
       min-width: 15em;
       height: 15em;
-
+      @media (max-width: 500px) {
+        max-width: 15em;
+    }
       
 
       img {
@@ -208,7 +214,7 @@ const StyleUser = styled.div`
       }
     }
     .header-right {
-      margin: .5em 1em;
+      margin: .5em 0em .5em 1em;
 
       .name {
         display: flex;
@@ -245,6 +251,9 @@ const StyleUser = styled.div`
         justify-content: space-between;
         box-shadow: 0px 2px 5px 0px #23252a;
         border-radius: 0.4em;
+        @media (max-width: 800px) {
+          flex-wrap: wrap;
+        }
         
         .column {
           padding: .8em;
@@ -275,6 +284,9 @@ const StyleUser = styled.div`
     box-shadow: 0px 2px 5px 0px #23252a;
     border-radius: 0.4em;
     margin: 2em 0;
+    @media (max-width: 600px) {
+        flex-wrap: wrap;
+      }
     .pub {
       width: 25%;
       min-height: 3em;
@@ -283,6 +295,9 @@ const StyleUser = styled.div`
       align-items: center;
       justify-content: space-between;
       padding: 1em;
+      @media (max-width: 600px) {
+        width: 50%;
+      }
 
       span {
         font-size: .7em;
@@ -296,6 +311,11 @@ const StyleUser = styled.div`
       &:first-child {
             border: none;
           }
+      &:nth-child(3) {
+        @media (max-width: 600px) {
+          border: none;
+      }
+      }
     }
   }
 `

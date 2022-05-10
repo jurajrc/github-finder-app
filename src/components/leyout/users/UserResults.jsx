@@ -28,11 +28,11 @@ const StyleResults = styled.article`
     justify-content: space-evenly;
 
     .card {
-        width: 19%;
+        width: 28%;
         margin: .8em 0;
-        @media screen and (max-width: 1300px) {
+        /* @media screen and (max-width: 1300px) {
             width: 28%;
-        }
+        } */
         @media screen and (max-width: 1000px) {
             width: 48%;
         }

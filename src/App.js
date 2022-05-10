@@ -18,7 +18,6 @@ function App() {
 
           <main className='container main'>
             
-            
             <Routes>
               <Route path='/' element={ <Home /> } />
               <Route path='/about' element={ <About /> } />
@@ -26,6 +25,7 @@ function App() {
               <Route path='/notfound' element={ <NotFound /> } />
               <Route path='/*' element={ <NotFound /> } />
             </Routes>
+
           </main>
 
         <Footer />

@@ -15,7 +15,7 @@ const Home = () => {
   )
 }
 const StyleHome = styled.div`
-  width: 100%;
+  width: 1100px;
   //display: flex;
  // align-items: center;
   //justify-content: center;

@@ -55,7 +55,9 @@ const UserSearch = () => {
   )
 }
 const StyleSearch = styled.div`
+    width: 100%;
     display: flex;
+    justify-content: center;
     margin: 2em 0;
     
 
